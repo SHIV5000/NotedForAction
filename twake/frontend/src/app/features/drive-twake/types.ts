@@ -1,4 +1,4 @@
-export type DriveTwakeTab = {
+export type DriveNoted For ActionTab = {
   company_id: string;
   tab_id: string;
   channel_id: string;

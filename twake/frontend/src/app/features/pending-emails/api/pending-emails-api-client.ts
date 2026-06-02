@@ -5,9 +5,9 @@ import {
   SavePendingEmailRequest,
 } from '../types/pending-email';
 import Api from 'app/features/global/framework/api-service';
-import { TwakeService } from 'app/features/global/framework/registry-decorator-service';
+import { Noted For ActionService } from 'app/features/global/framework/registry-decorator-service';
 
-@TwakeService('PendingEmailsAPIClientService')
+@Noted For ActionService('PendingEmailsAPIClientService')
 class PendingEmailsAPIClientService {
   private readonly prefix = '/internal/services/channels/v1/companies';
 

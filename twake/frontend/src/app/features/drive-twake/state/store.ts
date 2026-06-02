@@ -1,7 +1,7 @@
 import { atomFamily } from 'recoil';
-import { DriveTwakeTab } from '../types';
+import { DriveNoted For ActionTab } from '../types';
 
-export const DriveTwakeTabAtom = atomFamily<DriveTwakeTab | null, string>({
-  key: 'DriveTwakeTabAtom',
+export const DriveNoted For ActionTabAtom = atomFamily<DriveNoted For ActionTab | null, string>({
+  key: 'DriveNoted For ActionTabAtom',
   default: () => null,
 });

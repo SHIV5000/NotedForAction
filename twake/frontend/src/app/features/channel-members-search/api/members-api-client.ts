@@ -1,6 +1,6 @@
 import { ChannelMemberType } from 'app/features/channel-members-search/types/channel-members';
 import Api from 'app/features/global/framework/api-service';
-import { TwakeService } from 'app/features/global/framework/registry-decorator-service';
+import { Noted For ActionService } from 'app/features/global/framework/registry-decorator-service';
 import { WebsocketRoom } from 'app/features/global/types/websocket-types';
 import {
   ParamsChannelMember,
@@ -9,7 +9,7 @@ import {
   ResponseChannelMemberTypeList,
 } from '../types/channel-members';
 
-@TwakeService('ChannelMemberAPIClientService')
+@Noted For ActionService('ChannelMemberAPIClientService')
 class ChannelMembersApiClient {
   private readonly apiBaseUrl: string = '/internal/services/channels/v1/companies';
   private _realtime: WebsocketRoom = { room: '', token: '' };

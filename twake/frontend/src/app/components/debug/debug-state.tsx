@@ -2,13 +2,13 @@
 import React from 'react';
 import { useRecoilCallback } from 'recoil';
 
-interface TwakeDebugState {
+interface Noted For ActionDebugState {
   dumpStateSnapshot?(): void;
   get?(key: string): void;
   getAllAtoms?(): void;
 }
 
-const twakeDebugState: TwakeDebugState = {};
+const twakeDebugState: Noted For ActionDebugState = {};
 
 const useDebugRecoilState = () => {
   /**

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { TwakeService } from 'app/features/global/framework/registry-decorator-service';
+import { Noted For ActionService } from 'app/features/global/framework/registry-decorator-service';
 import InitService, {
   ConsoleConfiguration,
   InternalConfiguration,
@@ -32,7 +32,7 @@ export type LoginState =
   | 'logout';
 type InitState = '' | 'initializing' | 'initialized';
 
-@TwakeService('AuthService')
+@Noted For ActionService('AuthService')
 class AuthService {
   private provider: AuthProvider<any, any, any> | null = null;
   private logger: Logger.Logger;

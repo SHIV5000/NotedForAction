@@ -61,7 +61,7 @@ export default () => {
                 'Créez votre espace de travail gratuitement sur ',
               )}
             </span>
-            Twake &nbsp; 👉
+            Noted For Action &nbsp; 👉
           </a>
         </div>
       </div>

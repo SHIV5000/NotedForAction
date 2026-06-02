@@ -1,6 +1,6 @@
 /**
  * DEPRECATED
- * We should remove this when we are sure that new application format is implemented everywhere in Twake
+ * We should remove this when we are sure that new application format is implemented everywhere in Noted For Action
  */
 export type AppType = { [key: string]: unknown };
 

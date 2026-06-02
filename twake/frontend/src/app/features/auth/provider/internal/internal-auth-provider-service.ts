@@ -1,7 +1,7 @@
 import Logger from 'app/features/global/framework/logger-service';
 import { InternalConfiguration } from '../../../global/services/init-service';
 import Observable from '../../../../deprecated/Observable/Observable';
-import { TwakeService } from '../../../global/framework/registry-decorator-service';
+import { Noted For ActionService } from '../../../global/framework/registry-decorator-service';
 import { AuthProvider, InitParameters } from '../auth-provider';
 import Globals from 'app/features/global/services/globals-twake-app-service';
 import RouterService from 'app/features/router/services/router-service';
@@ -25,7 +25,7 @@ export type SignOutParameters = {
   reload: boolean;
 };
 
-@TwakeService('InternalAuthProvider')
+@Noted For ActionService('InternalAuthProvider')
 export default class InternalAuthProviderService
   extends Observable
   implements AuthProvider<SignInParameters, SignOutParameters, SignUpParameters>

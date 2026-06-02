@@ -1,8 +1,8 @@
 import { preferencesType, NotificationPreferencesType } from '../types/notifications-preferences';
 import Api from 'app/features/global/framework/api-service';
-import { TwakeService } from 'app/features/global/framework/registry-decorator-service';
+import { Noted For ActionService } from 'app/features/global/framework/registry-decorator-service';
 
-@TwakeService('NotificationsPreferencesAPIClientService')
+@Noted For ActionService('NotificationsPreferencesAPIClientService')
 class NotificationsPreferencesAPIClientService {
   private readonly apiUrl = '/internal/services/notifications/v1/preferences';
 

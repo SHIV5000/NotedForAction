@@ -57,7 +57,7 @@ const InformationsDescriptions = ({ application }: { application: Application })
         <Text type="secondary">{createdDate}</Text>
       </Item>
 
-      <Item label="Compatible with Twake" span={3}>
+      <Item label="Compatible with Noted For Action" span={3}>
         <Text type="secondary">
           {application.identity.compatibility.includes('twake')
             ? 'Yes'

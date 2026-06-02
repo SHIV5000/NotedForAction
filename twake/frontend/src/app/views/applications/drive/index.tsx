@@ -1,6 +1,6 @@
 import Browser from './browser';
 import { SelectorModal } from './modals/selector';
-import TwakeTabConfiguration from './twake-tab-configuration';
+import Noted For ActionTabConfiguration from './twake-tab-configuration';
 import { useCompanyApplications } from 'app/features/applications/hooks/use-company-applications';
 
 export type EmbedContext = {
@@ -44,7 +44,7 @@ const Drive = ({
   inPublicSharing?: boolean;
 }) => {
   if (context?.tabId) {
-    return <TwakeTabConfiguration context={context} />;
+    return <Noted For ActionTabConfiguration context={context} />;
   }
 
   return <Browser initialParentId={initialParentId} inPublicSharing={inPublicSharing} />;

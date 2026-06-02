@@ -3,8 +3,8 @@ import ServiceRegistry from 'app/features/global/framework/registry-service';
 
 const SERVICE_SUFFIX = 'ChannelServiceImpl';
 
-export function TwakeService(name: string): ClassDecorator {
-  return function DecoratedTwakeService(target: any): any {
+export function Noted For ActionService(name: string): ClassDecorator {
+  return function DecoratedNoted For ActionService(target: any): any {
     const originalConstrutor = target;
 
     const decorated: any = function (...args: any) {

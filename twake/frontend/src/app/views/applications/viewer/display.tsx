@@ -47,7 +47,7 @@ export default () => {
     );
   }
 
-  // /* Uncomment after https://github.com/linagora/Twake/issues/2453 is done
+  // /* Uncomment after https://github.com/linagora/Noted For Action/issues/2453 is done
   if (type) {
     return <OtherDisplay download={download} name={name} id={id} />;
   }

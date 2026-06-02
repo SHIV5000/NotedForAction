@@ -26,10 +26,10 @@ export default () => {
       <div className="error_message skew_in_top_nobounce">
         <div className="title">
           <Emojione type="👨‍🚀" size={32} />{' '}
-          {Languages.t('scenes.error_on_twake', [], 'You found an error on the Twake platform !')}
+          {Languages.t('scenes.error_on_twake', [], 'You found an error on the Noted For Action platform !')}
         </div>
         <div className="subtitle">
-          {Languages.t('scenes.no_panic', [], "Don't panic! Just reload this page to fix Twake.")}
+          {Languages.t('scenes.no_panic', [], "Don't panic! Just reload this page to fix Noted For Action.")}
         </div>
         {state?.error?.name && (
           <div className="text">

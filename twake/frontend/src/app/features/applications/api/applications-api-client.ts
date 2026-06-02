@@ -1,12 +1,12 @@
 import Api from '../../global/framework/api-service';
-import { TwakeService } from '../../global/framework/registry-decorator-service';
+import { Noted For ActionService } from '../../global/framework/registry-decorator-service';
 import { Application } from 'app/features/applications/types/application';
 
 type DeleteApplicationResponse = {
   status: 'success' | 'error';
 };
 
-@TwakeService('ApplicationsAPIClientService')
+@Noted For ActionService('ApplicationsAPIClientService')
 class ApplicationsAPIClientService {
   prefix = '/internal/services/applications/v1/applications';
   /**

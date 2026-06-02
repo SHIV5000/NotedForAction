@@ -3,7 +3,7 @@ import LocalStorage from 'app/features/global/framework/local-storage-service';
 import LoginService from 'app/features/auth/login-service';
 import WindowService from 'app/features/global/utils/window';
 import ConsoleAPIClient from 'app/features/console/api/console-api-client';
-import { TwakeService } from '../global/framework/registry-decorator-service';
+import { Noted For ActionService } from '../global/framework/registry-decorator-service';
 import Logger from '../global/framework/logger-service';
 
 export type JWTDataType = {
@@ -20,7 +20,7 @@ if ((WindowService.findGetParameter('mobile_login') as any) === '1') {
   LocalStorage.setItem('mobile_login', '1');
 }
 
-@TwakeService('JWTStorageService')
+@Noted For ActionService('JWTStorageService')
 class JWTStorage {
   private timeDelta = 5 * 60;
   private jwtData: JWTDataType = {

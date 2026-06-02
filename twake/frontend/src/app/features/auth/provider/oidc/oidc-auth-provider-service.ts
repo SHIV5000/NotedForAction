@@ -5,7 +5,7 @@ import { ConsoleConfiguration } from '../../../global/services/init-service';
 import Observable from '../../../../deprecated/Observable/Observable';
 import Logger from 'app/features/global/framework/logger-service';
 import { getAsFrontUrl } from 'app/features/global/utils/URLUtils';
-import { TwakeService } from '../../../global/framework/registry-decorator-service';
+import { Noted For ActionService } from '../../../global/framework/registry-decorator-service';
 import EnvironmentService from '../../../global/framework/environment-service';
 import { AuthProvider, InitParameters } from '../auth-provider';
 import ConsoleService from 'app/features/console/services/console-service';
@@ -16,7 +16,7 @@ const OIDC_CALLBACK_URL = '/oidccallback';
 const OIDC_SIGNOUT_URL = '/signout';
 const OIDC_CLIENT_ID = 'twake';
 
-@TwakeService('OIDCAuthProvider')
+@Noted For ActionService('OIDCAuthProvider')
 export default class OIDCAuthProviderService
   extends Observable
   implements AuthProvider<unknown, unknown, unknown>

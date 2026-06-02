@@ -24,11 +24,11 @@ export const setPublicLinkToken = (token: string | null) => {
   publicLinkToken = token;
 };
 
-export const setTwakeTabToken = (token: string | null) => {
+export const setNoted For ActionTabToken = (token: string | null) => {
   twakeTabToken = token;
 };
 
-const appendPublicAndTwakeToken = (useAnd?: boolean) => {
+const appendPublicAndNoted For ActionToken = (useAnd?: boolean) => {
   if (publicLinkToken) {
     return `${useAnd ? '&' : '?'}public_token=${publicLinkToken}`;
   }
@@ -42,19 +42,19 @@ export class DriveApiClient {
   private static logger = Logger.getLogger('MessageAPIClientService');
   static async get(companyId: string, id: string | 'trash' | '') {
     return await Api.get<DriveItemDetails>(
-      `/internal/services/documents/v1/companies/${companyId}/item/${id}${appendPublicAndTwakeToken()}`,
+      `/internal/services/documents/v1/companies/${companyId}/item/${id}${appendPublicAndNoted For ActionToken()}`,
     );
   }
 
   static async remove(companyId: string, id: string | 'trash' | '') {
     return await Api.delete<void>(
-      `/internal/services/documents/v1/companies/${companyId}/item/${id}${appendPublicAndTwakeToken()}`,
+      `/internal/services/documents/v1/companies/${companyId}/item/${id}${appendPublicAndNoted For ActionToken()}`,
     );
   }
 
   static async update(companyId: string, id: string, update: Partial<DriveItem>) {
     return await Api.post<Partial<DriveItem>, DriveItem>(
-      `/internal/services/documents/v1/companies/${companyId}/item/${id}${appendPublicAndTwakeToken()}`,
+      `/internal/services/documents/v1/companies/${companyId}/item/${id}${appendPublicAndNoted For ActionToken()}`,
       update,
     );
   }
@@ -68,14 +68,14 @@ export class DriveApiClient {
       { item: Partial<DriveItem>; version: Partial<DriveItemVersion> },
       DriveItem
     >(
-      `/internal/services/documents/v1/companies/${companyId}/item${appendPublicAndTwakeToken()}`,
+      `/internal/services/documents/v1/companies/${companyId}/item${appendPublicAndNoted For ActionToken()}`,
       data as { item: Partial<DriveItem>; version: Partial<DriveItemVersion> },
     );
   }
 
   static async createVersion(companyId: string, id: string, version: Partial<DriveItemVersion>) {
     return await Api.post<Partial<DriveItemVersion>, DriveItemVersion>(
-      `/internal/services/documents/v1/companies/${companyId}/item/${id}/version${appendPublicAndTwakeToken()}`,
+      `/internal/services/documents/v1/companies/${companyId}/item/${id}/version${appendPublicAndNoted For ActionToken()}`,
       version,
     );
   }
@@ -84,7 +84,7 @@ export class DriveApiClient {
     return Api.get<{ token: string }>(
       `/internal/services/documents/v1/companies/${companyId}/item/download/token` +
         `?items=${ids.join(',')}&version_id=${versionId}` +
-        appendPublicAndTwakeToken(true),
+        appendPublicAndNoted For ActionToken(true),
     );
   }
 
@@ -92,12 +92,12 @@ export class DriveApiClient {
     const { token } = await DriveApiClient.getDownloadToken(companyId, [id], versionId);
     if (versionId)
       return Api.route(
-        `/internal/services/documents/v1/companies/${companyId}/item/${id}/download?version_id=${versionId}&token=${token}${appendPublicAndTwakeToken(
+        `/internal/services/documents/v1/companies/${companyId}/item/${id}/download?version_id=${versionId}&token=${token}${appendPublicAndNoted For ActionToken(
           true,
         )}`,
       );
     return Api.route(
-      `/internal/services/documents/v1/companies/${companyId}/item/${id}/download?token=${token}${appendPublicAndTwakeToken(
+      `/internal/services/documents/v1/companies/${companyId}/item/${id}/download?token=${token}${appendPublicAndNoted For ActionToken(
         true,
       )}`,
     );
@@ -108,7 +108,7 @@ export class DriveApiClient {
     return Api.route(
       `/internal/services/documents/v1/companies/${companyId}/item/download/zip` +
         `?items=${ids.join(',')}&token=${token}` +
-        appendPublicAndTwakeToken(true),
+        appendPublicAndNoted For ActionToken(true),
     );
   }
 

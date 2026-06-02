@@ -1,7 +1,7 @@
 import { Modal } from 'app/atoms/modal';
 import { Info } from 'app/atoms/text';
 import Button from 'app/components/buttons/button';
-import { useDriveTwakeTab } from 'app/features/drive-twake/hooks/use-drive-twake-tab';
+import { useDriveNoted For ActionTab } from 'app/features/drive-twake/hooks/use-drive-twake-tab';
 import { useDriveItem } from 'app/features/drive/hooks/use-drive-item';
 import { useEffect, useState } from 'react';
 import { useSetRecoilState } from 'recoil';
@@ -10,7 +10,7 @@ import Browser from './browser';
 import { SelectorModalAtom } from './modals/selector';
 
 export default ({ context }: { context?: EmbedContext }) => {
-  const { tab, setTab, loading } = useDriveTwakeTab(context?.channelId || '', context?.tabId || '');
+  const { tab, setTab, loading } = useDriveNoted For ActionTab(context?.channelId || '', context?.tabId || '');
   const { item, loading: itemLoading, refresh } = useDriveItem(tab?.item_id || '');
   const setSelectorModalState = useSetRecoilState(SelectorModalAtom);
 

@@ -1,5 +1,5 @@
 import Api from 'app/features/global/framework/api-service';
-import { TwakeService } from 'app/features/global/framework/registry-decorator-service';
+import { Noted For ActionService } from 'app/features/global/framework/registry-decorator-service';
 import JWTStorage, { JWTDataType } from 'app/features/auth/jwt-storage-service';
 
 type LoginParams = {
@@ -16,7 +16,7 @@ type SignupParams = {
   username: string;
 };
 
-@TwakeService('ConsoleAPIClientService')
+@Noted For ActionService('ConsoleAPIClientService')
 class ConsoleAPIClient {
   login(params: LoginParams, disableJWTAuthentication = false): Promise<string> {
     return Api.post<LoginParams, { access_token: string }>(

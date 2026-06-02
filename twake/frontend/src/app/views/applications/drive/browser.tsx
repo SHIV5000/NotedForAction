@@ -4,7 +4,7 @@ import { Base, BaseSmall, Subtitle, Title } from 'app/atoms/text';
 import Menu from 'app/components/menus/menu';
 import { getFilesTree } from 'app/components/uploads/file-tree-utils';
 import UploadZone from 'app/components/uploads/upload-zone';
-import { setTwakeTabToken } from 'app/features/drive/api-client/api-client';
+import { setNoted For ActionTabToken } from 'app/features/drive/api-client/api-client';
 import { useDriveItem } from 'app/features/drive/hooks/use-drive-item';
 import { DriveRealtimeObject } from 'app/features/drive/hooks/use-drive-realtime';
 import { useDriveUpload } from 'app/features/drive/hooks/use-drive-upload';
@@ -42,7 +42,7 @@ export default memo(
     inPublicSharing?: boolean;
   }) => {
     const companyId = useRouterCompany();
-    setTwakeTabToken(twakeTabContextToken || null);
+    setNoted For ActionTabToken(twakeTabContextToken || null);
 
     const [parentId, _setParentId] = useRecoilState(
       DriveCurrentFolderAtom(initialParentId || 'root'),
@@ -163,7 +163,7 @@ export default memo(
           {document.location.origin.includes('canary') && access !== 'read' && !inPublicSharing && (
             <div className="bg-linear-purple w-full hidden sm:block px-4 py-2 rounded-md">
               <Base className=" !text-white">
-                Welcome to the next version of Twake Drive.
+                Welcome to the next version of Noted For Action Drive.
                 <br />
                 Your documents are not migrated yet, you can switch back to{' '}
                 <a className="text-white" href="https://web.twake.app">

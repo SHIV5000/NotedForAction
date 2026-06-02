@@ -13,7 +13,7 @@ prefix.apply(log, {
     return level.toUpperCase();
   },
   nameFormatter(name) {
-    return name || 'Twake';
+    return name || 'Noted For Action';
   },
   timestampFormatter(date) {
     return date.toISOString();

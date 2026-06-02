@@ -1,11 +1,11 @@
 import Api from '../../global/framework/api-service';
-import { TwakeService } from '../../global/framework/registry-decorator-service';
+import { Noted For ActionService } from '../../global/framework/registry-decorator-service';
 import { Application } from 'app/features/applications/types/application';
 import { WebsocketRoom } from '../../global/types/websocket-types';
 
 const PREFIX = '/internal/services/applications/v1/companies';
 
-@TwakeService('CompanyApplicationsAPIClientService')
+@Noted For ActionService('CompanyApplicationsAPIClientService')
 class CompanyApplicationsAPIClient {
   private realtime: Map<string, WebsocketRoom[]> = new Map();
 

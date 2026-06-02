@@ -49,7 +49,7 @@ export default () => {
       {LoginService.state === 'forgot_password' && <ForgotPassword />}
 
       <div className={'app_version_footer '}>
-        <div className="version_name fade_in">Twake {Globals.version.version_name}</div>
+        <div className="version_name fade_in">Noted For Action {Globals.version.version_name}</div>
         <div style={{ height: 20 }}>
           {server_infos_loaded && server_infos?.configuration?.branding?.name && (
             <div className="smalltext fade_in">
