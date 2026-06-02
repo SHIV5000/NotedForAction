@@ -1,0 +1,14 @@
+# Query: logo.svg
+# ContextLines: 1
+
+2 results - 2 files
+
+twake/backend/core/app/Configuration/Parameters.php.dist:
+  153                  "header" => [
+  154:                   "logo" => 'https://drive.google.com/file/d/1iO5CszeAQ2tJz4PRqcWITaiX3y42eGjJ/view?usp=sharing',
+  155                    "apps" => [
+
+twake/default-configuration/backend/Parameters.php:
+  152                  "header" => [
+  153:                   "logo" => 'https://drive.google.com/file/d/1iO5CszeAQ2tJz4PRqcWITaiX3y42eGjJ/view?usp=sharing',
+  154                    "apps" => [
