@@ -3,6 +3,11 @@ import { useIsChannelMember } from 'app/features/channels/hooks/use-channel';
 import PseudoMarkdownCompiler from 'app/features/global/services/pseudo-markdown-compiler-service';
 import { useMessage } from 'app/features/messages/hooks/use-message';
 import { useVisibleMessagesEditorLocation } from 'app/features/messages/hooks/use-message-editor';
+import {
+  getTaskFromMessage,
+  isBookmarked,
+  addBookmarkListener,
+} from 'app/features/noted-for-action/chat-task-service';
 import { MessageWithReplies } from 'app/features/messages/types/message';
 import useRouterWorkspace from 'app/features/router/hooks/use-router-workspace';
 import { useUser } from 'app/features/users/hooks/use-user';
@@ -26,6 +31,7 @@ import MessageHeader from './MessageHeader';
 import Options from './Options';
 import Reactions from './Reactions';
 import RetryButtons from './RetryButtons';
+import TaskCard from './task-card';
 
 type Props = {
   linkToThread?: boolean;
@@ -38,6 +44,7 @@ export default (props: Props) => {
   const [active, setActive] = useState(false);
   const [loadingAction, setLoadingAction] = useState(false);
   const [didMouseOver, setDidMouseOver] = useState(false);
+  const [, refreshBookmarkState] = useState(0);
 
   const context = useContext(MessageContext);
   const channelId = context.channelId;
@@ -84,7 +91,11 @@ export default (props: Props) => {
     setLoadingAction(false);
   }, [JSON.stringify(message.blocks)]);
 
+  useEffect(() => addBookmarkListener(() => refreshBookmarkState(value => value + 1)), []);
+
   const deleted = message.subtype === 'deleted';
+  const taskCard = getTaskFromMessage(message);
+  const bookmarked = isBookmarked(message.id) || (!!taskCard && isBookmarked(taskCard.id));
 
   const location = `message-${message.id}`;
   const { active: editorIsActive } = useVisibleMessagesEditorLocation(
@@ -106,6 +117,9 @@ export default (props: Props) => {
         active,
         'loading-interaction': loadingAction,
         'link-to-thread': props.linkToThread,
+        'nfa-chat-bubble': !props.linkToThread,
+        'nfa-task-message': !!taskCard,
+        'nfa-bookmarked-message': bookmarked,
       })}
       onMouseEnter={() => {
         setDidMouseOver(true);
@@ -164,6 +178,7 @@ export default (props: Props) => {
           deleted={deleted}
           linkToThread={props.linkToThread}
           message={message}
+          taskCard={taskCard}
           className={classNames({
             message_is_loading: messageIsLoading,
             'message-not-sent': messageSaveFailed,
@@ -204,6 +219,7 @@ export const MessageBlockContent = ({
   suffix,
   className,
   onAction,
+  taskCard,
 }: {
   deleted: boolean;
   linkToThread?: boolean;
@@ -211,6 +227,7 @@ export const MessageBlockContent = ({
   suffix?: ReactNode;
   className?: string;
   onAction: (type: string, id: string, context: unknown, passives: unknown) => void;
+  taskCard?: ReturnType<typeof getTaskFromMessage>;
 }) => {
   return (
     <div className="content-parent dont-break-out">
@@ -220,7 +237,7 @@ export const MessageBlockContent = ({
         </div>
       ) : (
         <>
-          <div className={'content allow_selection' + (className || '')}>
+          <div className={'content allow_selection ' + (className || '')}>
             {!!linkToThread && message.text}
             {!linkToThread && (
               <>
@@ -233,6 +250,8 @@ export const MessageBlockContent = ({
               </>
             )}
           </div>
+
+          {taskCard && <TaskCard task={taskCard} />}
 
           {message?.links &&
             (message?.links?.length || 0) > 0 &&

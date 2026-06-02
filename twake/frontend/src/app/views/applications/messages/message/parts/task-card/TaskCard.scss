@@ -1,0 +1,167 @@
+.nfa-task-card {
+  margin-top: 10px;
+  padding: 14px;
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: inset 4px 0 0 #3b82f6;
+
+  &.priority-high,
+  &.priority-urgent {
+    box-shadow: inset 4px 0 0 #ef4444;
+  }
+
+  &.priority-low {
+    box-shadow: inset 4px 0 0 #10b981;
+  }
+}
+
+.nfa-task-card-header,
+.nfa-task-card-title-row,
+.nfa-task-card-meta,
+.nfa-task-card-actions,
+.nfa-task-tags {
+  display: flex;
+  align-items: center;
+}
+
+.nfa-task-card-header {
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nfa-task-card-title-row {
+  min-width: 0;
+  gap: 10px;
+}
+
+.nfa-task-card-emoji {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #e0efff;
+  font-size: 20px;
+}
+
+.nfa-task-card-kicker {
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nfa-task-card-title {
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.nfa-task-card-description {
+  margin-top: 10px;
+  color: #475569;
+  font-size: 13px;
+}
+
+.nfa-task-icon-button,
+.nfa-task-card-actions button {
+  border: 0;
+  cursor: pointer;
+}
+
+.nfa-task-icon-button {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #64748b;
+
+  &.active {
+    background: #fef3c7;
+    color: #d97706;
+  }
+}
+
+.nfa-task-card-meta,
+.nfa-task-tags {
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.nfa-task-status,
+.nfa-task-pill,
+.nfa-task-tags span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 22px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.nfa-task-status.status-completed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.nfa-task-status.status-submitted,
+.nfa-task-status.status-needs_review {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.nfa-task-status.status-revoked {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.nfa-task-pill.overdue {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.nfa-task-tags span {
+  background: #eef2ff;
+  color: #3730a3;
+}
+
+.nfa-task-card-actions {
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 10px;
+    border-radius: 10px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+
+    &.secondary {
+      background: #e2e8f0;
+      color: #334155;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .nfa-task-card-actions button {
+    flex: 1;
+    justify-content: center;
+  }
+}

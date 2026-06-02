@@ -79,7 +79,7 @@
       opacity: 50%;
       cursor: not-allowed;
 
-      &.disabled{
+      &.disabled {
         pointer-events: none;
       }
 
@@ -92,7 +92,6 @@
         color: var(--primary);
         opacity: unset;
       }
-
     }
   }
 
@@ -212,5 +211,67 @@
 
   .attached-file {
     margin-right: 8px;
+  }
+}
+
+.message-input {
+  .nfa-schedule-toggle {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+    border: 0;
+    border-radius: 999px;
+    background: #eff6ff;
+    color: #2563eb;
+    cursor: pointer;
+
+    &.active,
+    &:hover {
+      background: #2563eb;
+      color: #fff;
+    }
+  }
+
+  .nfa-schedule-panel {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0 4px 32px;
+    padding: 8px;
+    border: 1px solid #bfdbfe;
+    border-radius: 12px;
+    background: #eff6ff;
+    color: #1e3a8a;
+    font-size: 12px;
+    font-weight: 700;
+
+    input {
+      height: 30px;
+      padding: 0 8px;
+      border: 1px solid #93c5fd;
+      border-radius: 8px;
+      background: #fff;
+      color: #0f172a;
+    }
+
+    button {
+      height: 30px;
+      padding: 0 10px;
+      border: 0;
+      border-radius: 8px;
+      background: #2563eb;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 800;
+
+      &:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+    }
   }
 }

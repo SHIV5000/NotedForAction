@@ -43,6 +43,7 @@ import { ChannelType } from 'app/features/channels/types/channel';
 import { useMessageQuoteReply } from 'app/features/messages/hooks/use-message-quote-reply';
 import QuotedMessage from 'app/components/quoted-message/quoted-message';
 import { UpIcon, PlusIcon } from 'app/atoms/icons-agnostic';
+import { addScheduledMessage } from 'app/features/noted-for-action/chat-task-service';
 
 type Props = {
   messageId?: string;
@@ -107,6 +108,8 @@ export default (props: Props) => {
   );
   const [isTooLong, setTooLong] = useState(false);
   const [inPlus, setInPlus] = useState(false);
+  const [showSchedule, setShowSchedule] = useState(false);
+  const [scheduledAt, setScheduledAt] = useState('');
 
   const { iAmWriting } = useChannelWritingActivityEmit(props.channelId || '', props.threadId);
 
@@ -148,6 +151,31 @@ export default (props: Props) => {
     return RichTextEditorStateService.getDataParser(editorPlugins).toString(editorState, format);
   };
 
+  const onSchedule = () => {
+    const content = getContentOutput(editorState);
+    if (!content.trim() || !scheduledAt) return;
+
+    addScheduledMessage({
+      channel_id: props.channelId || '',
+      thread_id: props.threadId,
+      text: content,
+      files_count: editor.files.length,
+      scheduled_at: new Date(scheduledAt).getTime(),
+    });
+    setEditorState(RichTextEditorStateService.clear(editorId).get(editorId));
+    clearUploads();
+    setScheduledAt('');
+    setShowSchedule(false);
+    AlertManager.alert(() => undefined, {
+      title: Languages.t('scenes.apps.messages.schedule.title', [], 'Scheduled message'),
+      text: Languages.t(
+        'scenes.apps.messages.schedule.saved',
+        [],
+        'Message saved to your scheduled queue.',
+      ),
+    });
+  };
+
   const onSend = async () => {
     const content = getContentOutput(editorState);
     setValue(content);
@@ -170,7 +198,7 @@ export default (props: Props) => {
 
       if (!app) {
         // eslint-disable-next-line @typescript-eslint/no-empty-function
-        AlertManager.alert(() => {}, {
+        AlertManager.alert(() => undefined, {
           text: Languages.t('services.apps.messages.no_command_possible', [content, app_name]),
           title: Languages.t('services.apps.messages.no_app'),
         });
@@ -255,7 +283,7 @@ export default (props: Props) => {
       return;
     }
 
-    if ((app as Application).display?.Noted For Action?.chat?.input) {
+    if ((app as Application).display?.['Noted For Action']?.chat?.input) {
       WorkspacesApps.openAppPopup(app.id);
     }
 
@@ -423,6 +451,23 @@ export default (props: Props) => {
             />
             {!props.messageId && (
               <Tooltip
+                title={Languages.t('scenes.apps.messages.schedule.title', [], 'Schedule')}
+                placement="top"
+              >
+                <button
+                  type="button"
+                  className={classNames('nfa-schedule-toggle', { active: showSchedule })}
+                  onClick={event => {
+                    event.preventDefault();
+                    setShowSchedule(!showSchedule);
+                  }}
+                >
+                  ⏰
+                </button>
+              </Tooltip>
+            )}
+            {!props.messageId && (
+              <Tooltip
                 title={Languages.t('scenes.apps.messages.input.send_message')}
                 placement="top"
               >
@@ -442,6 +487,20 @@ export default (props: Props) => {
                 </div>
               </Tooltip>
             )}
+          </div>
+        )}
+
+        {!hasEphemeralMessage && !props.messageId && showSchedule && (
+          <div className="nfa-schedule-panel">
+            <span>{Languages.t('scenes.apps.messages.schedule.send_later', [], 'Send later')}</span>
+            <input
+              type="datetime-local"
+              value={scheduledAt}
+              onChange={event => setScheduledAt(event.target.value)}
+            />
+            <button type="button" disabled={!scheduledAt || isEmpty()} onClick={() => onSchedule()}>
+              {Languages.t('scenes.apps.messages.schedule.save', [], 'Schedule')}
+            </button>
           </div>
         )}
 
