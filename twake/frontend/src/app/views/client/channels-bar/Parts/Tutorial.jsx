@@ -110,13 +110,13 @@ export default class Tutorial extends Component {
         {!WorkspaceUserRights.isInvite() && !tutorial_status.no_tuto && (
           <TutorialUI
             title={[
-              Languages.t('scenes.app.channelsbar.welcome', [], 'Bienvenue sur Twake'),
+              Languages.t('scenes.app.channelsbar.welcome', [], 'Bienvenue sur Noted For Action'),
               <Emojione type=":stars:" />,
             ]}
             subtitle={Languages.t(
               'scenes.app.channelsbar.welcoming_message_subtitle',
               [],
-              'Devenez un pro de Twake en seulement quelques clics !',
+              'Devenez un pro de Noted For Action en seulement quelques clics !',
             )}
             blocks={[
               {

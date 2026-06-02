@@ -129,7 +129,7 @@ export default class AttachmentPicker extends Component {
                     text: Languages.t(
                       'components.attachmentpicker.from_twake',
                       [],
-                      'From Twake Documents',
+                      'From Noted For Action Documents',
                     ),
                     submenu: [
                       {

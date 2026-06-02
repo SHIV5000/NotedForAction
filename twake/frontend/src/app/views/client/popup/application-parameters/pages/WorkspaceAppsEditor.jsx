@@ -206,7 +206,7 @@ export default props => {
             <Emojione type={':exploding_head:'} /> If you do not know how to fill these, go to{' '}
             {/* eslint-disable-next-line react/jsx-no-target-blank */}
             <a href="https://doc.twake.app" target="_blank" rel="noreferrer">
-              the Twake API documentation
+              the Noted For Action API documentation
             </a>{' '}
             !
           </div>
@@ -348,7 +348,7 @@ export default props => {
               description={Languages.t(
                 'scenes.app.popup.appsparameters.pages.api_data_description',
                 [],
-                "Données utiles pour l'API Twake.",
+                "Données utiles pour l'API Noted For Action.",
               )}
             >
               <div className="parameters_form" style={{ maxWidth: 'none', paddingTop: 10 }}>
@@ -557,7 +557,7 @@ export default props => {
                 {Languages.t(
                   'scenes.app.popup.appsparameters.pages.parameters_form_small_text',
                   [],
-                  "L'application non publiée ne fonctionnera que dans votre entreprise, si vous souhaitez la rendre disponible à tous les utilisateurs de Twake activez cette option.",
+                  "L'application non publiée ne fonctionnera que dans votre entreprise, si vous souhaitez la rendre disponible à tous les utilisateurs de Noted For Action activez cette option.",
                 )}
               </div>
 
@@ -567,7 +567,7 @@ export default props => {
                   {Languages.t(
                     'scenes.app.popup.appsparameters.pages.available_publication_alert',
                     [],
-                    'La publication de votre application est actuellement en attente de validation par les équipes de Twake.',
+                    'La publication de votre application est actuellement en attente de validation par les équipes de Noted For Action.',
                   )}
                 </div>
               )}

@@ -15,7 +15,7 @@ export default class Footer extends React.Component {
     super();
     this.onpremise = !!((InitService.server_infos || {}).branding || {}).name;
     this.menu = [
-      { type: 'text', text: `Twake v${Version.version_detail}` },
+      { type: 'text', text: `Noted For Action v${Version.version_detail}` },
       ...(props.onClickHelp
         ? [
             {
@@ -41,7 +41,7 @@ export default class Footer extends React.Component {
           selector: '#changelog_text',
           account: '7L9kKJ',
           translations: {
-            title: 'Twake Changelog',
+            title: 'Noted For Action Changelog',
             readMore: 'Read more',
             footer: 'View more changes',
           },

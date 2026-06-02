@@ -40,7 +40,7 @@ export default class Footer extends Component {
           })
         }
         onClickDocumentation={() => {
-          window.open('https://linagora.github.io/Twake/index.html');
+          window.open('https://linagora.github.io/Noted For Action/index.html');
         }}
       />
     );
