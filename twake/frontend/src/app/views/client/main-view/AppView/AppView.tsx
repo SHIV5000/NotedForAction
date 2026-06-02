@@ -1,8 +1,9 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import Messages from 'app/views/applications/messages';
 import Drive from 'app/views/applications/drive';
 import Calendar from 'app/views/applications/calendar/calendar-content';
 import Tasks from 'app/views/applications/tasks/tasks';
+import TaskHub from 'app/views/applications/tasks/task-hub';
 import NoApp from '../NoApp';
 import AppViewService from 'app/features/router/services/app-view-service';
 import { useChannel } from 'app/features/channels/hooks/use-channel';
@@ -26,6 +27,13 @@ const AppView: FC<PropsType> = props => {
   const { channel } = useChannel(props.id);
 
   const app = props.viewService.getConfiguration().app;
+  const [hash, setHash] = useState(window.location.hash);
+
+  useEffect(() => {
+    const onHashChange = () => setHash(window.location.hash);
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
 
   if (!channel) return <NoApp />;
 
@@ -44,7 +52,10 @@ const AppView: FC<PropsType> = props => {
     case 'Noted For Action_calendar':
       return <Calendar options={configuration} />;
     case 'Noted For Action_tasks':
-      return <Tasks channel={channel} options={configuration} />;
+      if (hash === '#legacy-board') {
+        return <Tasks channel={channel} options={configuration} />;
+      }
+      return <TaskHub channel={channel} options={configuration} />;
     case 'messages':
       return <Messages channel={channel} options={configuration} />;
     default:

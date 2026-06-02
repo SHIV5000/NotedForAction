@@ -32,6 +32,11 @@ import { EmojiSuggestionType } from 'app/components/rich-text-editor/plugins/emo
 import { MessagesListContext } from '../../messages-list';
 import { useSetRecoilState } from 'recoil';
 import { ForwardMessageAtom } from 'app/components/forward-message';
+import {
+  createTaskFromMessage,
+  isBookmarked,
+  toggleBookmark,
+} from 'app/features/noted-for-action/chat-task-service';
 
 type Props = {
   onOpen?: () => void;
@@ -173,6 +178,43 @@ export default (props: Props) => {
 
     menu.push({
       type: 'menu',
+      icon: 'bookmark',
+      text: isBookmarked(message.id)
+        ? Languages.t('scenes.apps.messages.message.remove_bookmark', [], 'Remove private bookmark')
+        : Languages.t('scenes.apps.messages.message.bookmark', [], 'Private bookmark'),
+      className: 'option_button',
+      onClick: () => {
+        toggleBookmark(message.id);
+      },
+    });
+
+    menu.push({
+      type: 'menu',
+      icon: 'check-square',
+      text: Languages.t('scenes.apps.messages.message.create_task', [], 'Create task from message'),
+      className: 'option_button',
+      onClick: () => {
+        createTaskFromMessage({
+          ...message,
+          cache: {
+            company_id: context.companyId,
+            workspace_id: context.workspaceId,
+            channel_id: channelId,
+          },
+        });
+        AlertManager.alert(() => undefined, {
+          title: Languages.t('scenes.apps.tasks.my_tasks', [], 'My tasks'),
+          text: Languages.t(
+            'scenes.apps.tasks.created_from_message',
+            [],
+            'Task added to Task Hub from this message.',
+          ),
+        });
+      },
+    });
+
+    menu.push({
+      type: 'menu',
       icon: 'envelope-send',
       text: Languages.t('scenes.apps.messages.message.forward'),
       className: 'option_button',
@@ -189,7 +231,7 @@ export default (props: Props) => {
 
     const apps =
       getCompanyApplications(Groups.currentGroupId).filter(
-        (app: Application) => app.display?.Noted For Action?.chat?.actions?.length,
+        (app: Application) => app.display?.['Noted For Action']?.chat?.actions?.length,
       ) || [];
 
     if (apps.length > 0 && !listContext.readonly) {
@@ -211,7 +253,8 @@ export default (props: Props) => {
                     className="menu-app-icon"
                     style={{ backgroundImage: 'url(' + app.identity?.icon + ')' }}
                   />
-                  {app?.display?.Noted For Action?.chat?.actions?.[0].description || app.identity?.name}
+                  {app?.display?.['Noted For Action']?.chat?.actions?.[0].description ||
+                    app.identity?.name}
                 </div>
               </div>
             );
