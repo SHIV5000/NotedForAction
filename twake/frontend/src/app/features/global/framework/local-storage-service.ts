@@ -1,5 +1,5 @@
 export default class LocalStorage {
-  static prefix = 'twake:';
+  static prefix = 'Noted For Action:';
 
   static setItem(key: string, value: unknown) {
     window.localStorage.setItem(`${LocalStorage.prefix}${key}`, JSON.stringify(value));
@@ -28,7 +28,7 @@ export default class LocalStorage {
       if (key) {
         const depreciatedKeysRemove =
           [
-            'twake-collections-db',
+            'Noted For Action-collections-db',
             'm_input',
             'language',
             'jwt',

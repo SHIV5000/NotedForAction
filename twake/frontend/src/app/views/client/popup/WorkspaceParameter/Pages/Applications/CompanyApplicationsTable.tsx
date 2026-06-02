@@ -137,7 +137,7 @@ export default () => {
         const { key, ...application } = record;
         return (
           <div style={{ float: 'right' }}>
-            {!!(application.display?.twake?.configuration || []).includes('global') && (
+            {!!(application.display?.Noted For Action?.configuration || []).includes('global') && (
               <Button
                 type="ghost"
                 style={{ marginRight: 8 }}

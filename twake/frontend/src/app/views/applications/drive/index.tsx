@@ -1,6 +1,6 @@
 import Browser from './browser';
 import { SelectorModal } from './modals/selector';
-import Noted For ActionTabConfiguration from './twake-tab-configuration';
+import Noted For ActionTabConfiguration from './Noted For Action-tab-configuration';
 import { useCompanyApplications } from 'app/features/applications/hooks/use-company-applications';
 
 export type EmbedContext = {

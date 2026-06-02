@@ -47,11 +47,11 @@ export default (props: Props) => {
 
   const getDefaultApplicationIcon = (app: Application) => {
     switch (app.identity.code) {
-      case 'twake_tasks':
+      case 'Noted For Action_tasks':
         return <CheckSquare size={16} color={selected ? 'var(--white)' : 'var(--black)'} />;
-      case 'twake_calendar':
+      case 'Noted For Action_calendar':
         return <Calendar size={16} color={selected ? 'var(--white)' : 'var(--black)'} />;
-      case 'twake_drive':
+      case 'Noted For Action_drive':
         return <Folder size={16} color={selected ? 'var(--white)' : 'var(--black)'} />;
 
       default:

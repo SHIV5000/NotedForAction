@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Typography } from 'antd';
 
-import Globals from 'app/features/global/services/globals-twake-app-service';
+import Globals from 'app/features/global/services/globals-Noted For Action-app-service';
 import Languages from 'app/features/global/services/languages-service';
 import InitService from 'app/features/global/services/init-service';
 import LoginService from 'app/features/auth/login-service';
@@ -39,7 +39,7 @@ export default () => {
   return (
     <div className="loginPage">
       {server_infos_loaded && !server_infos?.configuration?.branding?.name && (
-        <div className="twake_logo" />
+        <div className="Noted For Action_logo" />
       )}
 
       {LoginService.state === 'error' && <Error />}
@@ -56,10 +56,10 @@ export default () => {
               {server_infos?.configuration?.branding?.name &&
                 Languages.t('scenes.login.footer.branding', [
                   server_infos?.configuration?.branding?.name,
-                  server_infos?.configuration?.branding.link || 'twake.app',
+                  server_infos?.configuration?.branding.link || 'Noted For Action.app',
                 ])}
-              <Typography.Link onClick={() => window.open('https://twakeapp.com', 'blank')}>
-                {Languages.t('scenes.login.footer.go_to_twake')}
+              <Typography.Link onClick={() => window.open('https://Noted For Actionapp.com', 'blank')}>
+                {Languages.t('scenes.login.footer.go_to_Noted For Action')}
               </Typography.Link>
               {' - ' + Globals.version.version}
             </div>
@@ -67,9 +67,9 @@ export default () => {
           {server_infos_loaded && !server_infos?.configuration?.branding?.name && (
             <Typography.Link
               className="fade_in"
-              onClick={() => window.open('https://twakeapp.com', 'blank')}
+              onClick={() => window.open('https://Noted For Actionapp.com', 'blank')}
             >
-              {Languages.t('scenes.login.footer.go_to_twake')}
+              {Languages.t('scenes.login.footer.go_to_Noted For Action')}
             </Typography.Link>
           )}
         </div>

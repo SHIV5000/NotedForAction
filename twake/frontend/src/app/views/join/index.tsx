@@ -141,7 +141,7 @@ export default (): JSX.Element => {
                     👋
                   </span>
                 </Title>
-                <Text>{Languages.t('scenes.join.twake_description')}</Text>
+                <Text>{Languages.t('scenes.join.Noted For Action_description')}</Text>
                 <Divider />
 
                 {lockedInvitation && (

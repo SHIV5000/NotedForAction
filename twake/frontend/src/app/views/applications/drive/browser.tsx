@@ -34,15 +34,15 @@ export const DriveCurrentFolderAtom = atomFamily<string, string>({
 export default memo(
   ({
     initialParentId,
-    twakeTabContextToken,
+    Noted For ActionTabContextToken,
     inPublicSharing,
   }: {
     initialParentId?: string;
-    twakeTabContextToken?: string;
+    Noted For ActionTabContextToken?: string;
     inPublicSharing?: boolean;
   }) => {
     const companyId = useRouterCompany();
-    setNoted For ActionTabToken(twakeTabContextToken || null);
+    setNoted For ActionTabToken(Noted For ActionTabContextToken || null);
 
     const [parentId, _setParentId] = useRecoilState(
       DriveCurrentFolderAtom(initialParentId || 'root'),
@@ -166,8 +166,8 @@ export default memo(
                 Welcome to the next version of Noted For Action Drive.
                 <br />
                 Your documents are not migrated yet, you can switch back to{' '}
-                <a className="text-white" href="https://web.twake.app">
-                  https://web.twake.app
+                <a className="text-white" href="https://web.Noted For Action.app">
+                  https://web.Noted For Action.app
                 </a>{' '}
                 to see all your documents. Documents added here will not be visible yet on
                 production but will be kept after the final migration.

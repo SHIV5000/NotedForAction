@@ -42,7 +42,7 @@ export default (props: Props) => {
   const addon_calls: any[] = [];
 
   const apps = useCompanyApplications().applications.filter(
-    (app: Application) => app.display?.twake?.chat?.input,
+    (app: Application) => app.display?.Noted For Action?.chat?.input,
   );
 
   if (props.triggerApp) {
@@ -67,16 +67,16 @@ export default (props: Props) => {
           };
 
           if (
-            app.display?.twake?.chat?.input?.type === 'file' &&
-            app?.identity?.code !== 'twake_drive'
+            app.display?.Noted For Action?.chat?.input?.type === 'file' &&
+            app?.identity?.code !== 'Noted For Action_drive'
           ) {
             addon_files.push(menu_item);
           } else if (
             app?.identity?.code === 'jitsi' ||
-            app.display?.twake?.chat?.input?.type === 'call'
+            app.display?.Noted For Action?.chat?.input?.type === 'call'
           ) {
             addon_calls.push(menu_item);
-          } else if (app?.identity?.code !== 'twake_drive') {
+          } else if (app?.identity?.code !== 'Noted For Action_drive') {
             addon_menu.push(menu_item);
           }
         }
@@ -248,7 +248,7 @@ export default (props: Props) => {
                 className="messages-input-app-icon"
                 style={{
                   backgroundImage:
-                    'url(' + (app.display?.twake?.chat?.input?.icon || app.identity?.icon) + ')',
+                    'url(' + (app.display?.Noted For Action?.chat?.input?.icon || app.identity?.icon) + ')',
                 }}
               />
             </Button>

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import ModalManager from 'app/components/modal/modal-manager';
 import UserService from 'app/features/users/services/current-user-service';
-import WelcomeOnNoted For Action from './popups/welcome-on-twake';
+import WelcomeOnNoted For Action from './popups/welcome-on-Noted For Action';
 import DepreciatedCollections from 'app/deprecated/CollectionsV1/Collections/Collections.js';
 import InitService from 'app/features/global/services/init-service';
 import Groups from 'app/deprecated/workspaces/groups.js';

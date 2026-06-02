@@ -111,7 +111,7 @@ export type StandalonePlugin = {
 };
 
 export type ApplicationDisplay = {
-  twake?: {
+  Noted For Action?: {
     version?: number;
 
     /**

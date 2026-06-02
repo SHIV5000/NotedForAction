@@ -88,11 +88,11 @@ export const CreateModal = ({
               />
 
               {(applications || [])
-                .filter(app => app.display?.twake?.files?.editor?.empty_files?.length)
+                .filter(app => app.display?.Noted For Action?.files?.editor?.empty_files?.length)
                 .reduce(
                   (a, app) => [
                     ...a,
-                    ...(app.display?.twake?.files?.editor?.empty_files || [])
+                    ...(app.display?.Noted For Action?.files?.editor?.empty_files || [])
                       .filter(ef => ef?.filename)
                       .map(ef => ({
                         app,

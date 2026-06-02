@@ -30,7 +30,7 @@ const AppView: FC<PropsType> = props => {
   if (!channel) return <NoApp />;
 
   switch (app?.identity?.code) {
-    case 'twake_drive':
+    case 'Noted For Action_drive':
       return (
         <Drive
           context={{
@@ -41,9 +41,9 @@ const AppView: FC<PropsType> = props => {
           }}
         />
       );
-    case 'twake_calendar':
+    case 'Noted For Action_calendar':
       return <Calendar options={configuration} />;
-    case 'twake_tasks':
+    case 'Noted For Action_tasks':
       return <Tasks channel={channel} options={configuration} />;
     case 'messages':
       return <Messages channel={channel} options={configuration} />;

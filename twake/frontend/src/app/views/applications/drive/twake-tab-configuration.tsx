@@ -1,7 +1,7 @@
 import { Modal } from 'app/atoms/modal';
 import { Info } from 'app/atoms/text';
 import Button from 'app/components/buttons/button';
-import { useDriveNoted For ActionTab } from 'app/features/drive-twake/hooks/use-drive-twake-tab';
+import { useDriveNoted For ActionTab } from 'app/features/drive-Noted For Action/hooks/use-drive-Noted For Action-tab';
 import { useDriveItem } from 'app/features/drive/hooks/use-drive-item';
 import { useEffect, useState } from 'react';
 import { useSetRecoilState } from 'recoil';
@@ -44,7 +44,7 @@ export default ({ context }: { context?: EmbedContext }) => {
       {isConfigured && (
         <Browser
           initialParentId={item.id}
-          twakeTabContextToken={context?.channelId + '+' + context?.tabId}
+          Noted For ActionTabContextToken={context?.channelId + '+' + context?.tabId}
         />
       )}
       {!isConfigured && !loading && !(tab?.item_id && itemLoading) && (

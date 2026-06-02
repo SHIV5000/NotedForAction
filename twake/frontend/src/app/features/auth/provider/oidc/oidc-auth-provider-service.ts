@@ -14,7 +14,7 @@ import LocalStorage from 'app/features/global/framework/local-storage-service';
 
 const OIDC_CALLBACK_URL = '/oidccallback';
 const OIDC_SIGNOUT_URL = '/signout';
-const OIDC_CLIENT_ID = 'twake';
+const OIDC_CLIENT_ID = 'Noted For Action';
 
 @Noted For ActionService('OIDCAuthProvider')
 export default class OIDCAuthProviderService

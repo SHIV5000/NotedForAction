@@ -55,13 +55,13 @@ const Emojione = React.memo((props: Props) => {
     return <Icon type="trash" className="trash_emoji" />;
   }
 
-  if (props.type.substr(0, 7) === ':twake-') {
+  if (props.type.substr(0, 7) === ':Noted For Action-') {
     return (
       <i
         className={'emojione emoji-image ' + (props.className || '')}
         style={{
           backgroundImage:
-            "url('/public/img/twake-emoji/" + props.type.replace(/:/g, '') + ".png')",
+            "url('/public/img/Noted For Action-emoji/" + props.type.replace(/:/g, '') + ".png')",
         }}
       />
     );

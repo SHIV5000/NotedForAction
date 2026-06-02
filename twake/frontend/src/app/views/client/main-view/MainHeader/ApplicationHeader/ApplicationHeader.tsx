@@ -24,11 +24,11 @@ export default (): JSX.Element => {
 
   const getDefaultApplicationIcon = (app: Partial<Application>) => {
     switch (app?.identity?.code) {
-      case 'twake_tasks':
+      case 'Noted For Action_tasks':
         return <CheckSquare size={16} color={'var(--black)'} />;
-      case 'twake_calendar':
+      case 'Noted For Action_calendar':
         return <Calendar size={16} color={'var(--black)'} />;
-      case 'twake_drive':
+      case 'Noted For Action_drive':
         return <Folder size={16} color={'var(--black)'} />;
 
       default:

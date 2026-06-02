@@ -202,7 +202,7 @@ export default (props: Props) => {
 
     const threadId = parentMessage.id;
 
-    if (app?.identity?.code === 'twake_drive') {
+    if (app?.identity?.code === 'Noted For Action_drive') {
       const menu = [];
       const has_drive_app = getCompanyApplication(app.id);
 
@@ -255,7 +255,7 @@ export default (props: Props) => {
       return;
     }
 
-    if ((app as Application).display?.twake?.chat?.input) {
+    if ((app as Application).display?.Noted For Action?.chat?.input) {
       WorkspacesApps.openAppPopup(app.id);
     }
 

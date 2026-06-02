@@ -25,7 +25,7 @@ const defaultApplicationPayload: Application = {
     hooks: [],
   },
   display: {
-    twake: {
+    Noted For Action: {
       version: 1,
 
       files: {

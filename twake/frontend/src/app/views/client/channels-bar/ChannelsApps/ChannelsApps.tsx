@@ -108,7 +108,7 @@ export const CompanyApplications = ({ companyId }: PropsType) => {
   return (
     <div className="applications_channels" style={{ marginTop: 8 }}>
       {companyApplications
-        .filter(app => app.display?.twake?.standalone)
+        .filter(app => app.display?.Noted For Action?.standalone)
         .map(app => (
           <ChannelUI
             key={app.id}

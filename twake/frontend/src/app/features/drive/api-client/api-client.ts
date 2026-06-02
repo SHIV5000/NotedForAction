@@ -18,22 +18,22 @@ export type SearchDocumentsBody = {
 };
 
 let publicLinkToken: null | string = null;
-let twakeTabToken: null | string = null;
+let Noted For ActionTabToken: null | string = null;
 
 export const setPublicLinkToken = (token: string | null) => {
   publicLinkToken = token;
 };
 
 export const setNoted For ActionTabToken = (token: string | null) => {
-  twakeTabToken = token;
+  Noted For ActionTabToken = token;
 };
 
 const appendPublicAndNoted For ActionToken = (useAnd?: boolean) => {
   if (publicLinkToken) {
     return `${useAnd ? '&' : '?'}public_token=${publicLinkToken}`;
   }
-  if (twakeTabToken) {
-    return `${useAnd ? '&' : '?'}twake_tab_token=${twakeTabToken}`;
+  if (Noted For ActionTabToken) {
+    return `${useAnd ? '&' : '?'}Noted For Action_tab_token=${Noted For ActionTabToken}`;
   }
   return '';
 };

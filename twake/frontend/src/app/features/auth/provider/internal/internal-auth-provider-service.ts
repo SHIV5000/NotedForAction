@@ -3,7 +3,7 @@ import { InternalConfiguration } from '../../../global/services/init-service';
 import Observable from '../../../../deprecated/Observable/Observable';
 import { Noted For ActionService } from '../../../global/framework/registry-decorator-service';
 import { AuthProvider, InitParameters } from '../auth-provider';
-import Globals from 'app/features/global/services/globals-twake-app-service';
+import Globals from 'app/features/global/services/globals-Noted For Action-app-service';
 import RouterService from 'app/features/router/services/router-service';
 import ConsoleAPIClient from 'app/features/console/api/console-api-client';
 

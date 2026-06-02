@@ -92,7 +92,7 @@ export default ({ selected }: { selected: boolean }): JSX.Element => {
                     reactElement: () => {
                       const apps = getCompanyApplications(Groups.currentGroupId).filter(
                         (app: Application) =>
-                          (app?.display?.twake?.configuration || []).includes('channel'),
+                          (app?.display?.Noted For Action?.configuration || []).includes('channel'),
                       );
 
                       if (apps.length) {

@@ -102,7 +102,7 @@ export default (props: PropsType): JSX.Element => {
               )}
             >
               {companyApplications
-                .filter((app: Application) => app.display?.twake?.tab)
+                .filter((app: Application) => app.display?.Noted For Action?.tab)
                 .map((app: Application) => {
                   return (
                     <Option key={`key_${app.id}`} value={app.id || ''}>

@@ -8,7 +8,7 @@ interface Noted For ActionDebugState {
   getAllAtoms?(): void;
 }
 
-const twakeDebugState: Noted For ActionDebugState = {};
+const Noted For ActionDebugState: Noted For ActionDebugState = {};
 
 const useDebugRecoilState = () => {
   /**
@@ -17,7 +17,7 @@ const useDebugRecoilState = () => {
    * @param {string} key - The key of the atom
    * @returns {void}
    */
-  twakeDebugState.get = useRecoilCallback(
+  Noted For ActionDebugState.get = useRecoilCallback(
     ({ snapshot }) =>
       async (key: string) => {
         const allNodes = Array.from(snapshot.getNodes_UNSTABLE());
@@ -35,7 +35,7 @@ const useDebugRecoilState = () => {
    *
    * @returns {void}
    */
-  twakeDebugState.dumpStateSnapshot = useRecoilCallback(
+  Noted For ActionDebugState.dumpStateSnapshot = useRecoilCallback(
     ({ snapshot }) =>
       async () => {
         const result: Record<string, any> = {
@@ -58,7 +58,7 @@ const useDebugRecoilState = () => {
         const link = document.createElement('a');
 
         link.href = url;
-        link.download = `twake-state-${new Date().toISOString()}.json`;
+        link.download = `Noted For Action-state-${new Date().toISOString()}.json`;
 
         link.click();
         URL.revokeObjectURL(url);
@@ -71,7 +71,7 @@ const useDebugRecoilState = () => {
    *
    * @returns {void}
    */
-  twakeDebugState.getAllAtoms = useRecoilCallback(
+  Noted For ActionDebugState.getAllAtoms = useRecoilCallback(
     ({ snapshot }) =>
       async () => {
         for (const node of snapshot.getNodes_UNSTABLE()) {
@@ -83,7 +83,7 @@ const useDebugRecoilState = () => {
     [],
   );
 
-  (window as any).twakeDebugState = twakeDebugState;
+  (window as any).Noted For ActionDebugState = Noted For ActionDebugState;
 };
 
 

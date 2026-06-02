@@ -59,7 +59,7 @@ const InformationsDescriptions = ({ application }: { application: Application })
 
       <Item label="Compatible with Noted For Action" span={3}>
         <Text type="secondary">
-          {application.identity.compatibility.includes('twake')
+          {application.identity.compatibility.includes('Noted For Action')
             ? 'Yes'
             : `No, this integration is compatible with ${application.identity.compatibility
                 .map(v => capitalize(v))

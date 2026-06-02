@@ -189,7 +189,7 @@ export default (props: Props) => {
 
     const apps =
       getCompanyApplications(Groups.currentGroupId).filter(
-        (app: Application) => app.display?.twake?.chat?.actions?.length,
+        (app: Application) => app.display?.Noted For Action?.chat?.actions?.length,
       ) || [];
 
     if (apps.length > 0 && !listContext.readonly) {
@@ -211,7 +211,7 @@ export default (props: Props) => {
                     className="menu-app-icon"
                     style={{ backgroundImage: 'url(' + app.identity?.icon + ')' }}
                   />
-                  {app?.display?.twake?.chat?.actions?.[0].description || app.identity?.name}
+                  {app?.display?.Noted For Action?.chat?.actions?.[0].description || app.identity?.name}
                 </div>
               </div>
             );
